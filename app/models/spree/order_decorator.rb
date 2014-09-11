@@ -26,7 +26,7 @@ end
 Spree::Order.state_machine.before_transition :to => :payment, :do => :valid_terms_and_conditions?
 
 # Validate on state change
-Spree::Order.state_machine.before_transition :to => :terms_and_conditions, :do => :payment_selected?
+#Spree::Order.state_machine.before_transition :to => :terms_and_conditions, :do => :payment_selected?
 
 # Add terms_and_conditions to strong parameters
 Spree::PermittedAttributes.checkout_attributes << :terms_and_conditions # Remove if Spree is below version 2.1
