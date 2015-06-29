@@ -1,12 +1,21 @@
-<div class="terms_and_conditions_box">
-  <h4><%= Spree.t('terms_and_conditions.title') %></h4>
-
-  <div class="terms_and_conditions_text">
-    <%= render 'spree/checkout/terms_and_conditions_text' %>
+<div class="panel panel-default" >
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= Spree.t('terms_and_conditions.title') %></h3>
   </div>
-
-  <div style="margin-top: 5px;">
-    <%= form.check_box :terms_and_conditions %> <%= label_tag(:terms_and_conditions, Spree.t('terms_and_conditions.checkbox')) %>
+  <div class="panel-body">
+    <div class="terms_and_conditions_text">
+	    <%= render 'spree/checkout/terms_and_conditions_text' %>
+	  </div>
   </div>
 </div>
-<%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
+
+<br />
+
+<div class="well text-left form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-lg btn-success' %>
+  <span>
+    &nbsp; &nbsp;
+    <%= form.check_box :terms_and_conditions %> 
+		<%= label_tag(:terms_and_conditions, Spree.t('terms_and_conditions.checkbox')) %>
+  </span>
+</div>
